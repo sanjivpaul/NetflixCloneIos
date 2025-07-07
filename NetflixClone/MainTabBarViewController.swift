@@ -33,6 +33,10 @@ class MainTabBarViewController: UITabBarController {
         vc4.title="Downloads"
         
         
+//        tab bar tint color
+        tabBar.tintColor = .label
+        
+        
         
 //        display all the tab screens in array
         setViewControllers([vc1, vc2, vc3, vc4], animated: true)
