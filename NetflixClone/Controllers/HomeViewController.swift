@@ -11,8 +11,8 @@ class HomeViewController: UIViewController {
     
 //    creating a home feed table
     private let homeFeedTable : UITableView = {
-        let table = UITableView()
-        table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        let table = UITableView(frame: .zero, style: .grouped)
+        table.register(CollectionViewTableViewCell.self, forCellReuseIdentifier: CollectionViewTableViewCell.identifier)
         return table
     }()
 
@@ -34,17 +34,28 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
+//    its create total sections
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 20
+    }
     
 //    its creating 20 cells
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20 // return 20 rows in each section
+        return 1 // return 20 rows in each section
     }
     
 //    its for dequeue each row ==> set hello world in each cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "Hello world"
-        cell.backgroundColor = .systemPink
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+//        cell.textLabel?.text = "Hello world"
+//        cell.backgroundColor = .systemPink
+//        return cell
+        
+//        useing my custom collection view table
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CollectionViewTableViewCell.identifier, for: indexPath) as? CollectionViewTableViewCell else {
+            return UITableViewCell()
+        }
+        
         return cell
     }
     
