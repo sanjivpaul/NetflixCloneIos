@@ -27,6 +27,7 @@ class CollectionViewTableViewCell: UITableViewCell {
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.showsHorizontalScrollIndicator = false // hide horizontal scroll indicator
         
     }
     
@@ -47,7 +48,7 @@ extension CollectionViewTableViewCell:UICollectionViewDelegate, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        cell.backgroundColor = .green
+        cell.backgroundColor = .systemGray
         return cell
     }
     
@@ -55,9 +56,4 @@ extension CollectionViewTableViewCell:UICollectionViewDelegate, UICollectionView
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
     }
-    
-
-    
-    
-    
 }
