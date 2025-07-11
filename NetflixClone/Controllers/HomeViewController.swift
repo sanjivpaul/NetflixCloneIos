@@ -35,6 +35,7 @@ class HomeViewController: UIViewController {
         
         let headerView = HeroHeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 450))
         homeFeedTable.tableHeaderView = headerView
+        homeFeedTable.showsVerticalScrollIndicator = false
         
         
     }
@@ -49,7 +50,7 @@ class HomeViewController: UIViewController {
             UIBarButtonItem(image: UIImage(systemName: "play.rectangle"), style: .done, target: self, action: nil),
         ]
         
-        navigationController?.navigationBar.tintColor = .black
+        navigationController?.navigationBar.tintColor = .white
         
     }
     
@@ -95,6 +96,16 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
         return 40
     }
     
+//    style header section title
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int){
+        guard let header = view as? UITableViewHeaderFooterView else {return}
+        header.textLabel?.font = .systemFont(ofSize: 18, weight: UIFont.Weight.semibold)
+        header.textLabel?.frame = CGRect(x: header.bounds.origin.x + 20, y:header.bounds.origin.y, width:100, height:header.bounds.height)
+        header.textLabel?.textColor = .white
+    }
+    
+    
+//    set title for section
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return sectionTitle[section]
     }
