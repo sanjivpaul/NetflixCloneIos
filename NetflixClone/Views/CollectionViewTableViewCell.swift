@@ -28,7 +28,6 @@ class CollectionViewTableViewCell: UITableViewCell {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.showsHorizontalScrollIndicator = false // hide horizontal scroll indicator
-        
     }
     
     required init?(coder:NSCoder) {

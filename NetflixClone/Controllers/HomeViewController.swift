@@ -26,7 +26,12 @@ class HomeViewController: UIViewController {
         homeFeedTable.dataSource = self
         
 //        hero image of home screen
-        homeFeedTable.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 450))
+//        homeFeedTable.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 450))
+        
+        let headerView = HeroHeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 450))
+        homeFeedTable.tableHeaderView = headerView
+        
+        
     }
     
     override func viewDidLayoutSubviews() {
