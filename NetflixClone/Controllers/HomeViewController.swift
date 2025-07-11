@@ -9,6 +9,8 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    let sectionTitle:[String] = ["Trending Movies","Popular", "Trending Tv", "Upcoming Movies", "Top Rated"]
+    
 //    creating a home feed table
     private let homeFeedTable : UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
@@ -60,7 +62,7 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
 //    its create total sections
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 20
+        return sectionTitle.count
     }
     
 //    its creating 20 cells
@@ -91,6 +93,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
 //    section height
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sectionTitle[section]
     }
     
 //    this will create a effect when scroll up then navigationBar will go up and on scroll down it stick to navigationBar
