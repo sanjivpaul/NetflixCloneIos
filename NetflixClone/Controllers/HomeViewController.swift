@@ -92,4 +92,15 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40
     }
+    
+//    this will create a effect when scroll up then navigationBar will go up and on scroll down it stick to navigationBar
+    func scrollViewDidScroll(_ scrollView:UIScrollView){
+        let defaultOffset = view.safeAreaInsets.top
+        let offset = scrollView.contentOffset.y + defaultOffset
+        
+        navigationController?.navigationBar.transform = .init(translationX: 0, y: min(0, -offset))
+    }
+    
+    
+    
 }
