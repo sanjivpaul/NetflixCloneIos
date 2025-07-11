@@ -37,6 +37,8 @@ class HomeViewController: UIViewController {
         homeFeedTable.tableHeaderView = headerView
         homeFeedTable.showsVerticalScrollIndicator = false
         
+        getTrendingMovies()
+        
         
     }
     
@@ -57,6 +59,13 @@ class HomeViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         homeFeedTable.frame = view.bounds
+    }
+    
+    private func getTrendingMovies(){
+        APICaller.shared.getTrendingMoview{_ in
+            
+            
+        }
     }
 }
 
