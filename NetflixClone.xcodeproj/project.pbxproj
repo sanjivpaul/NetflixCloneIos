@@ -30,20 +30,53 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		35AA0A3B2E1BB9D900497BEA /* Exceptions for "NetflixClone" folder in "NetflixClone" target */ = {
+		088E50E42E22D3CE005775FD /* Exceptions for "NetflixClone" folder in "NetflixClone" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Info.plist,
+				"/Localized: LaunchScreen.storyboard",
+				AppDelegate.swift,
+				Assets.xcassets,
+				Controllers/DownloadsViewController.swift,
+				Controllers/HomeViewController.swift,
+				Controllers/SearchViewController.swift,
+				Controllers/UpcomingViewController.swift,
+				MainTabBarViewController.swift,
+				Managers/APICaller.swift,
+				Models/Movie.swift,
+				Resources/Extensions.swift,
+				SceneDelegate.swift,
+				Views/CollectionViewTableViewCell.swift,
+				Views/HeroHeaderUIView.swift,
 			);
 			target = 35AA0A122E1BB9D700497BEA /* NetflixClone */;
+		};
+		088E50E52E22D3CE005775FD /* Exceptions for "NetflixClone" folder in "NetflixCloneUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"/Localized: LaunchScreen.storyboard",
+				AppDelegate.swift,
+				Assets.xcassets,
+				Controllers/DownloadsViewController.swift,
+				Controllers/HomeViewController.swift,
+				Controllers/SearchViewController.swift,
+				Controllers/UpcomingViewController.swift,
+				Info.plist,
+				MainTabBarViewController.swift,
+				Managers/APICaller.swift,
+				SceneDelegate.swift,
+				Views/CollectionViewTableViewCell.swift,
+				Views/HeroHeaderUIView.swift,
+			);
+			target = 35AA0A322E1BB9D900497BEA /* NetflixCloneUITests */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		35AA0A152E1BB9D700497BEA /* NetflixClone */ = {
+		088E50D52E22D3CE005775FD /* NetflixClone */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				35AA0A3B2E1BB9D900497BEA /* Exceptions for "NetflixClone" folder in "NetflixClone" target */,
+				088E50E42E22D3CE005775FD /* Exceptions for "NetflixClone" folder in "NetflixClone" target */,
+				088E50E52E22D3CE005775FD /* Exceptions for "NetflixClone" folder in "NetflixCloneUITests" target */,
 			);
 			path = NetflixClone;
 			sourceTree = "<group>";
@@ -88,7 +121,7 @@
 		35AA0A0A2E1BB9D700497BEA = {
 			isa = PBXGroup;
 			children = (
-				35AA0A152E1BB9D700497BEA /* NetflixClone */,
+				088E50D52E22D3CE005775FD /* NetflixClone */,
 				35AA0A2C2E1BB9D900497BEA /* NetflixCloneTests */,
 				35AA0A362E1BB9D900497BEA /* NetflixCloneUITests */,
 				35AA0A142E1BB9D700497BEA /* Products */,
@@ -119,9 +152,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				35AA0A152E1BB9D700497BEA /* NetflixClone */,
 			);
 			name = NetflixClone;
 			packageProductDependencies = (
@@ -167,6 +197,7 @@
 				35AA0A352E1BB9D900497BEA /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
+				088E50D52E22D3CE005775FD /* NetflixClone */,
 				35AA0A362E1BB9D900497BEA /* NetflixCloneUITests */,
 			);
 			name = NetflixCloneUITests;
