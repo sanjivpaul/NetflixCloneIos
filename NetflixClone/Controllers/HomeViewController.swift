@@ -37,7 +37,7 @@ class HomeViewController: UIViewController {
         homeFeedTable.tableHeaderView = headerView
         homeFeedTable.showsVerticalScrollIndicator = false
         
-        getTrendingMovies()
+        fetchData()
         
         
     }
@@ -61,17 +61,29 @@ class HomeViewController: UIViewController {
         homeFeedTable.frame = view.bounds
     }
     
-    private func getTrendingMovies(){
-        APICaller.shared.getTrendingMoview{results in
-            switch results {
-            case .success(let movies):
-                print(movies)
-                
-            case .failure(let error):
-                print(error)
-            }
-            
-            
+    private func fetchData(){
+        
+//        APICaller.shared.getTrendingMoview{results in
+//            switch results {
+//            case .success(let movies):
+//                print(movies)
+//                
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
+     
+        
+//        APICaller.shared.getTrandingTvs{results in
+//            
+//        }
+        
+//        APICaller.shared.getUpcomingMovies{results in
+////            
+//        }
+        
+        APICaller.shared.getPopular{results in
+            //
         }
     }
 }
