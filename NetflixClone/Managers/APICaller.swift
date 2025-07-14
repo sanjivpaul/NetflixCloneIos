@@ -74,7 +74,7 @@ class APICaller{
             do {
                 let results = try JSONDecoder().decode(TrendingTvResponse.self, from: data)
                 print(results)
-//                completion(.success(results.results))
+                completion(.success(results.results))
             }
             
             catch {
@@ -87,7 +87,7 @@ class APICaller{
     }
     
 //    Upcoming Movies
-    func getUpcomingMovies(competion: @escaping (Result<[Movie], Error>)-> Void){
+    func getUpcomingMovies(completion: @escaping (Result<[Movie], Error>)-> Void){
         guard let url = URL(string: "\(Constants.baseURL)/movie/popular") else {return}
         
         var request = URLRequest(url: url)
@@ -101,16 +101,16 @@ class APICaller{
                 return
             }
             
-            do {
+            do{
                 let results = try JSONDecoder().decode(TrendingMoviesResponse.self, from: data)
-                print(results)
-            }catch {
-//                print(error.localizedDescription)
-                completion(.failure(APIError.failedToGetData))
-
+                completion(.success(results.results))
             }
+            
+            catch {
+                completion(.failure(APIError.failedToGetData))
+            }
+            
         }
-        
         task.resume()
     }
     
@@ -132,7 +132,7 @@ class APICaller{
             
             do{
                 let results = try JSONDecoder().decode(TrendingMoviesResponse.self, from: data)
-                print(results)
+                completion(.success(results.results))
             }
             
             catch {
@@ -161,7 +161,7 @@ class APICaller{
             
             do {
                 let results = try JSONDecoder().decode(TrendingMoviesResponse.self, from: data)
-                print(results)
+                completion(.success(results.results))
             }
             
             catch {

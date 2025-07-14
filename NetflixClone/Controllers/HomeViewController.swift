@@ -7,6 +7,15 @@
 
 import UIKit
 
+enum Sections: Int {
+    case TrandingMovies: 0
+    case TrandingTv = 1
+    case Popular = 2
+    case Upcoming = 3
+    case TopRated = 4
+    
+}
+
 class HomeViewController: UIViewController {
     
     let sectionTitle:[String] = ["Trending Movies","Popular", "Trending Tv", "Upcoming Movies", "Top Rated"]
