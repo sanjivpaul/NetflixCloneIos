@@ -8,7 +8,7 @@
 import UIKit
 
 enum Sections: Int {
-    case TrandingMovies: 0
+    case TrandingMovies = 0
     case TrandingTv = 1
     case Popular = 2
     case Upcoming = 3
@@ -119,6 +119,14 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CollectionViewTableViewCell.identifier, for: indexPath) as? CollectionViewTableViewCell else {
             return UITableViewCell()
         }
+        
+//        switch indexPath.section {
+//        case Sections.TrandingMovies.rawValue:
+//        case Sections.TrandingTv.rawValue:
+//        case Sections.Popular.rawValue:
+//        case Sections.Upcoming.rawValue:
+//        case Sections.TopRated.rawValue:
+//        }
         
         return cell
     }
