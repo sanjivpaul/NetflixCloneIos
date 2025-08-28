@@ -120,13 +120,52 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
             return UITableViewCell()
         }
         
-//        switch indexPath.section {
-//        case Sections.TrandingMovies.rawValue:
-//        case Sections.TrandingTv.rawValue:
-//        case Sections.Popular.rawValue:
-//        case Sections.Upcoming.rawValue:
-//        case Sections.TopRated.rawValue:
-//        }
+        switch indexPath.section {
+        case Sections.TrandingMovies.rawValue:
+            APICaller.shared.getTrendingMovies{result in
+                switch result {
+                case .success(let movies):
+                    cell.configure(with: movies)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        case Sections.TrandingTv.rawValue:
+            APICaller.shared.getTrandingTvs{result in
+                switch result {
+                case .success(let movies):
+                    cell.configure(with: movies)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }}
+        case Sections.Popular.rawValue:
+            APICaller.shared.getPopular{result in
+                switch result {
+                case .success(let movies):
+                    cell.configure(with: movies)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }}
+        case Sections.Upcoming.rawValue:
+            APICaller.shared.getUpcomingMovies{result in
+                switch result{
+                case . success(let movies):
+                    cell.configure(with: movies)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }}
+        case Sections.TopRated.rawValue:
+            APICaller.shared.getTopRated{result in
+                switch result{
+                case . success(let movies):
+                    cell.configure(with: movies)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }}
+            
+        default:
+            return UITableViewCell()
+        }
         
         return cell
     }

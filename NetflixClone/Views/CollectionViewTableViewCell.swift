@@ -47,6 +47,10 @@ class CollectionViewTableViewCell: UITableViewCell {
     
     public func configure(with movies: [Movie]) {
         self.movies = movies
+        DispatchQueue.main.async{ [weak self] in
+            self?.collectionView.reloadData()
+            
+        }
     }
     
 }
@@ -66,13 +70,19 @@ extension CollectionViewTableViewCell:UICollectionViewDelegate, UICollectionView
             
         }
         
-        cell.configure(with: "")
+        guard let model = movies[indexPath.row].poster_path else{
+            return UICollectionViewCell()
+        }
+        
+//        cell.configure(with: "")
+        cell.configure(with: model)
         
         return cell
     }
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+//        return 10
+        return movies.count
     }
 }

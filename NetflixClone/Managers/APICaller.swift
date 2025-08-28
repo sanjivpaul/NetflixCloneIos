@@ -20,7 +20,7 @@ class APICaller{
     static let shared = APICaller()
     
 //    callback function
-    func getTrendingMoview(completion: @escaping (Result<[Movie], Error>) ->Void){
+    func getTrendingMovies(completion: @escaping (Result<[Movie], Error>) ->Void){
         guard let url = URL(string: "\(Constants.baseURL)/movie/popular") else {return}
         
         var request = URLRequest(url: url)
@@ -57,7 +57,7 @@ class APICaller{
     
     
 //    Trending Tv
-    func getTrandingTvs(completion: @escaping (Result<[Tv], Error>) -> Void){
+    func getTrandingTvs(completion: @escaping (Result<[Movie], Error>) -> Void){
         guard let url = URL(string: "\(Constants.baseURL)/movie/popular") else {return}
         
         var request = URLRequest(url: url)
@@ -72,7 +72,7 @@ class APICaller{
             }
             
             do {
-                let results = try JSONDecoder().decode(TrendingTvResponse.self, from: data)
+                let results = try JSONDecoder().decode(TrendingMoviesResponse.self, from: data)
                 print(results)
                 completion(.success(results.results))
             }
